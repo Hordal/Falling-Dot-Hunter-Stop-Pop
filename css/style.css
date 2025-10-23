@@ -1,0 +1,144 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: #3a3a3a;
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+}
+
+/* 메인 메뉴 스타일 */
+#mainMenu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+}
+
+#mainMenu h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    color: #ffc107;
+    text-shadow: 2px 2px 4px #000;
+}
+
+#mainMenu p {
+    font-size: 1.1em;
+    margin-bottom: 30px;
+}
+
+#startButton {
+    padding: 15px 30px;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+#startButton:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+/* 게임 종료 화면 스타일 */
+#gameOverScreen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+}
+
+#gameOverScreen h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    color: #dc3545; /* 빨간색으로 강조 */
+}
+
+#gameOverScreen p {
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+
+#restartButton, #toMenuButton {
+    padding: 12px 25px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px;
+    width: 180px;
+}
+
+#toMenuButton { background-color: #6c757d; color: white; }
+
+#gameContainer {
+    /* 캔버스와 텍스트의 기준이 될 컨테이너 */
+    position: relative;
+    width: 400px;
+    height: 600px;
+}
+
+canvas {
+  border: 2px solid #333;
+  display: block;
+  background: #f2f2f2;
+}
+
+/* 게임 UI 스타일 */
+#uiContainer {
+    width: 400px;
+    text-align: center;
+}
+
+/* ⭐ 타이머 및 목숨 표시 스타일 ⭐ */
+#timer, #livesDisplay, #scoreDisplay {
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff; /* 글자색을 흰색으로 변경하여 가독성 확보 */
+    margin: 5px 0;
+    /* display: block; 이 명시적으로 필요 없습니다. 기본적으로 p 태그는 블록 요소입니다. */
+}
+
+#livesDisplay {
+    margin-bottom: 10px;
+    color: #ff4d4d; /* 목숨 하트 색상 강조 */
+}
+
+#freezeText {
+    /* 부모 요소(#gameContainer)를 기준으로 절대 위치 */
+    position: absolute;
+    top: 50%; /* 수직 중앙 */
+    left: 50%; /* 수평 중앙 */
+    transform: translate(-50%, -50%); /* 정확한 중앙 정렬 */
+    
+    color: red;
+    font-size: 3em;
+    font-weight: bold;
+    /* game.js가 타이핑 시작 시 display: block; 으로 변경합니다. */
+    display: none; 
+    white-space: nowrap;
+    z-index: 10; /* 캔버스 위에 표시되도록 설정 */
+    
+    /* 텍스트가 마우스 이벤트를 가로채지 않도록 설정 */
+    pointer-events: none;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* 가독성을 위한 그림자 */
+}
+
+/* 화면 전환을 위한 클래스 */
+.hidden {
+    display: none !important;
+}

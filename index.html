@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Stop & Pop</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="mainMenu">
+  <h1>Stop & Pop</h1>
+  <p>떨어지는 원을 클릭하고, '그대로 멈춰라'를 피하세요!</p>
+  <button id="startButton">게임 시작</button>
+  <p id="highScore">최고 점수: 0</p>
+</div>
+
+<div id="gameScreen" class="hidden">
+  <div id="gameContainer">
+    <h1 id="freezeText"></h1> 
+    <canvas id="gameCanvas" width="400" height="600"></canvas>
+  </div>
+  <div id="uiContainer"></div>
+</div>
+
+<div id="gameOverScreen" class="hidden">
+  <h1>게임 종료</h1>
+  <p id="finalScore">최종 점수: 0</p>
+  <p id="finalHighScore">최고 기록: 0</p>
+  <button id="restartButton">다시 시작</button>
+  <button id="toMenuButton">메인 메뉴로</button>
+</div>
+
+<script src="js/game.js"></script>
+
+</body>
+</html>
